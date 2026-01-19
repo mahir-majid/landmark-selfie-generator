@@ -19,24 +19,33 @@ Infinite-You-Service/
 
 Frontend (Available at http://localhost:3000)
 
-cd frontend  
-npm install  
-npm run dev  
+```
+cd frontend
+npm install
+npm run dev
+```
 
 ## Model Service Deployment
 
-The Infinite-You-Service folder needs to be pushed to its own GitHub repository and used directly by a RunPod serverless endpoint. RunPod handles the container build and deployment. For proper HuggingFace model download access, make sure to set a environment variable called "HF_TOKEN" in RunPod deployment that has access to the following gated repo, https://huggingface.co/black-forest-labs/FLUX.1-schnell, and custom LoRAs used in this project, https://huggingface.co/mahirmajid/Infinite-You-AI-Selfie-LoRAs/tree/main. The FastAPI backend sends generation requests to this runpod endpoint.
+The Infinite-You-Service folder needs to be pushed to its own GitHub repository and used directly by a RunPod serverless endpoint. RunPod handles the container build and deployment.
 
-Configure environment variables "RUNPOD_INFU_URL" and "RUNPOD_API_KEY" in .env file of fastapi-backend folder based on your Runpod deployment.
+For proper HuggingFace model download access, set an environment variable called `HF_TOKEN` in the RunPod deployment with access to the following gated repo and custom LoRAs:
+
+https://huggingface.co/black-forest-labs/FLUX.1-schnell  
+https://huggingface.co/mahirmajid/Infinite-You-AI-Selfie-LoRAs/tree/main  
+
+The FastAPI backend sends generation requests to this RunPod endpoint.
+
+Configure environment variables `RUNPOD_INFU_URL` and `RUNPOD_API_KEY` in the `.env` file of the fastapi-backend folder based on your RunPod deployment.
 
 ## Run Backend Locally
 
 Backend (Available at http://localhost:8000)
 
-```text
+```
 cd fastapi-backend
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
 python3 image.py
-
+```
