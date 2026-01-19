@@ -25,7 +25,8 @@ npm run dev
 
 ## Model Service Deployment
 
-The Infinite-You-Service folder needs to be pushed to its own GitHub repository and used directly by a RunPod serverless endpoint. RunPod handles the container build and deployment. For proper HuggingFace model download access, Mmake sure to set a environment variable called "HF_TOKEN" in RunPod deployment that has access to the following gated repo, https://huggingface.co/black-forest-labs/FLUX.1-schnell, and custom LoRAs used in this project, https://huggingface.co/mahirmajid/Infinite-You-AI-Selfie-LoRAs/tree/main. The FastAPI backend sends generation requests to this runpod endpoint.
+The Infinite-You-Service folder needs to be pushed to its own GitHub repository and used directly by a RunPod serverless endpoint. RunPod handles the container build and deployment. For proper HuggingFace model download access, make sure to set a environment variable called "HF_TOKEN" in RunPod deployment that has access to the following gated repo, https://huggingface.co/black-forest-labs/FLUX.1-schnell, and custom LoRAs used in this project, https://huggingface.co/mahirmajid/Infinite-You-AI-Selfie-LoRAs/tree/main. The FastAPI backend sends generation requests to this runpod endpoint.
+
 Configure environment variables "RUNPOD_INFU_URL" and "RUNPOD_API_KEY" in .env file of fastapi-backend folder based on your Runpod deployment.
 
 ## Run Backend Locally
