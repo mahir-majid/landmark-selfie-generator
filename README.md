@@ -32,7 +32,8 @@ Configure environment variables "RUNPOD_INFU_URL" and "RUNPOD_API_KEY" in .env f
 ## Run Backend Locally
 
 Backend (Available at http://localhost:8000)
+
+```bash
 cd fastapi-backend
-Optionally: Create Virtual environment
-pip install -r requirements.txt  
+pip install -r requirements.txt
 python3 image.py
